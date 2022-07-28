@@ -1,0 +1,28 @@
+body {
+    background-color: aquamarine;
+    margin: 0px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#container {
+    grid-template-columns: 100px 50px 100px;
+    grid-template-rows: 80px auto 80px;
+    grid-auto-flow: column;
+    gap: 20px;
+    background-color: orange;
+    height: 50%;
+    width: 50%;
+  }
+
+  .item1 {
+    grid-column-start: 1;
+    grid-column-end: 1;
+  }
+
+  .item2 {
+    grid-column-start: 3;
+    grid-column-end: 2;
+  }
