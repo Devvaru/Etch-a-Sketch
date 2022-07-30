@@ -1,28 +1,30 @@
 body {
-    background-color: aquamarine;
-    margin: 0px;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  background-color: aquamarine;
+  margin: 0px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0px;
 }
 
 #container {
-    grid-template-columns: 100px 50px 100px;
-    grid-template-rows: 80px auto 80px;
-    grid-auto-flow: column;
-    gap: 20px;
-    background-color: orange;
-    height: 50%;
-    width: 50%;
-  }
+  display: flex;
+  gap: 0px;
+  margin: 0px;
+  flex-wrap: wrap;
+  background-color:cornflowerblue;
+  height: 500px;
+  width: 500px;
+  align-content: flex-start;
+}
 
-  .item1 {
-    grid-column-start: 1;
-    grid-column-end: 1;
-  }
-
-  .item2 {
-    grid-column-start: 3;
-    grid-column-end: 2;
-  }
+.pixel {
+  background-color: purple;
+  width: 6.25%;
+  height: 6.25%;
+  margin: 0px;
+}
+.pixel:hover {
+  background-color:coral;
+}
