@@ -28,3 +28,8 @@ body {
 .pixel:hover {
   background-color:coral;
 }
+
+.button {
+  padding: 20px;
+  
+}
