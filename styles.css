@@ -15,7 +15,7 @@ body {
   background-color: beige;
   display: flex;
   flex-direction: row;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
   padding-bottom: 50px;
 }
@@ -37,6 +37,7 @@ body {
 
 #main {
   display: flex;
+  flex-direction: row;
 }
 
 #canvas {
@@ -45,8 +46,8 @@ body {
   margin: 0px;
   flex-wrap: wrap;
   background-color:cornflowerblue;
-  height: 500px;
-  width: 500px;
+  height: 680px;
+  width: 680px;
   align-content: flex-start;
 }
 
@@ -62,5 +63,5 @@ body {
 
 .button {
   padding: 20px;
-  
+  text-align: center;
 }
