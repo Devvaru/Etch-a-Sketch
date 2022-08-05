@@ -31,11 +31,12 @@ body {
 
 #title {
   font-family: "whisper";
-  font-size: 70px;
+  font-size: 75px;
   text-align: center;
   margin: 0px;
-  color: #DDB7FF;
+  color: #cba5ec;
   text-shadow: 0px 0px 20px rgba(255, 255, 255, 0.5);
+  padding-bottom: 25px;
 }
 
 #main {
@@ -46,8 +47,9 @@ body {
 #buttonsLeft, #buttonsRight {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   height: 600px;
+  row-gap: 50px;
 }
 
 #buttonsLeft {
@@ -61,6 +63,7 @@ body {
 .button {
   color: #fff;
   font-size: 21px;
+  font-weight: 500;
   font-family: "Open Sans", sans-serif;
   background: linear-gradient(157.82deg, #FFBE8A 14.48%, #FFDF8E 85.52%);
   border-radius: 16px;
@@ -86,19 +89,26 @@ body {
   background-color:cornflowerblue;
   height: 600px;
   width: 600px;
-  align-content: flex-start;
-  border-style: inset;
-  border-width: 5px;
-  border-color: #d1c2dd;
+  align-content: center;
+  border-style: solid;
+  border-width: 8px;
+  border-top-color: #DDCDFF;
+  border-left-color: #DDCDFF;
+  border-bottom-color: #EEE5FF;
+  border-right-color: #EEE5FF;
 }
 
 .pixel {
-  background: #F3F3F4;
+  background: #FFF;
   width: 6.25%;
   height: 6.25%;
   margin: 0px;
 }
 .pixel:hover {
+  background-color:coral;
+}
+
+.pixel:focus {
   background-color:coral;
 }
 

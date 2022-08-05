@@ -47,11 +47,11 @@ rainbowButton.className = "button";
 rainbowButton.id = "rainbowButton";
 buttonsLeft.appendChild(rainbowButton);
 
-const eraseButton = document.createElement("button");
-eraseButton.textContent = "Eraser";
-eraseButton.className = "button";
-eraseButton.id = "eraseButton";
-buttonsLeft.appendChild(eraseButton);
+const scratchButton = document.createElement("button");
+scratchButton.textContent = "Scratch";
+scratchButton.className = "button";
+scratchButton.id = "scratch";
+buttonsLeft.appendChild(scratchButton);
 
 //Drawing area
 const canvas = document.createElement("div");
@@ -66,8 +66,14 @@ const buttonsRight = document.createElement("div");
 buttonsRight.id = "buttonsRight";
 main.appendChild(buttonsRight);
 
+const eraseButton = document.createElement("button");
+eraseButton.textContent = "Eraser";
+eraseButton.className = "button";
+eraseButton.id = "eraseButton";
+buttonsRight.appendChild(eraseButton);
+
 const resetCanvas = document.createElement('button');
-resetCanvas.textContent = "Reset Canvas";
+resetCanvas.textContent = "Reset";
 resetCanvas.className = "button"
 resetCanvas.id = "resetButton"
 buttonsRight.appendChild(resetCanvas);
