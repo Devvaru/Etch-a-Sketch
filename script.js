@@ -29,11 +29,29 @@ const buttonsLeft = document.createElement("div");
 buttonsLeft.id = "buttonsLeft";
 main.appendChild(buttonsLeft);
 
-const resetCanvas = document.createElement('button');
-resetCanvas.textContent = "Reset Canvas";
-resetCanvas.className = "button"
-resetCanvas.id = "resetButton"
-buttonsLeft.appendChild(resetCanvas);
+const defaultButton = document.createElement("button");
+defaultButton.textContent = "Default";
+defaultButton.className = "button";
+defaultButton.id = "defaultButton";
+buttonsLeft.appendChild(defaultButton);
+
+const grayscaleButton = document.createElement("button");
+grayscaleButton.textContent = "Grayscale";
+grayscaleButton.className = "button";
+grayscaleButton.id  = "greyScaleButton";
+buttonsLeft.appendChild(grayscaleButton);
+
+const rainbowButton = document.createElement("button");
+rainbowButton.textContent = "Rainbow";
+rainbowButton.className = "button";
+rainbowButton.id = "rainbowButton";
+buttonsLeft.appendChild(rainbowButton);
+
+const eraseButton = document.createElement("button");
+eraseButton.textContent = "Eraser";
+eraseButton.className = "button";
+eraseButton.id = "eraseButton";
+buttonsLeft.appendChild(eraseButton);
 
 //Drawing area
 const canvas = document.createElement("div");
@@ -48,13 +66,11 @@ const buttonsRight = document.createElement("div");
 buttonsRight.id = "buttonsRight";
 main.appendChild(buttonsRight);
 
-const greyScale = document.createElement("button");
-greyScale.textContent = "Greyscale";
-greyScale.className = "button";
-greyScale.id  = "greyScaleButton";
-buttonsRight.appendChild(greyScale);
-
-
+const resetCanvas = document.createElement('button');
+resetCanvas.textContent = "Reset Canvas";
+resetCanvas.className = "button"
+resetCanvas.id = "resetButton"
+buttonsRight.appendChild(resetCanvas);
 
 let sixteen = 256; //temp until math implemented
 
