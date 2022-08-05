@@ -1,6 +1,6 @@
 body {
   font-family: 'Open Sans', sans-serif;
-  background-color: aquamarine;
+  background: linear-gradient(180deg, #DDCDFF 0%, #9CC2FA 100%);
   margin: 0px;
   height: 100vh;
   display: flex;
@@ -12,7 +12,9 @@ body {
 #background {
   height: 90%;
   width: 75%;
-  background-color: beige;
+  background: #FAF4FF;
+  box-shadow: 30px 30px 80px -7px rgba(28, 72, 227, 0.5);
+  border-radius: 42px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -31,8 +33,12 @@ body {
 
 #title {
   font-family: "whisper";
-  font-size: 50px;
+  font-size: 70px;
   text-align: center;
+  margin: 0px;
+  padding: 50px;
+  color: #DDB7FF;
+  text-shadow: 0px 0px 20px rgba(255, 255, 255, 0.5);
 }
 
 #main {
@@ -44,16 +50,28 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  height: 680px;
+  height: 600px;
 }
 
 .button {
+  color: #fff;
+  font-size: 21px;
+  font-family: "Open Sans", sans-serif;
+  background: linear-gradient(157.82deg, #FFBE8A 14.48%, #FFDF8E 85.52%);
+  border-radius: 16px;
   padding: 20px;
   text-align: center;
   min-width: 200px;
   border-radius: 15px;
   border-style: none;
   margin: 0px 50px 0px 50px;
+  transition-duration: 0.7s;
+}
+
+.button:hover {
+  box-shadow: -3px -3px 5px #FFFFFF, -10px -10px 20px #FFFFFF, 1px 1px 10px #EBD5FF, 10px 10px 20px #EBD5FF;
+  border-radius: 16px;
+  cursor: pointer;
 }
 
 #canvas {
@@ -62,13 +80,16 @@ body {
   margin: 0px;
   flex-wrap: wrap;
   background-color:cornflowerblue;
-  height: 680px;
-  width: 680px;
+  height: 600px;
+  width: 600px;
   align-content: flex-start;
+  border-style: inset;
+  border-width: 5px;
+  border-color: #d1c2dd;
 }
 
 .pixel {
-  background-color: purple;
+  background: #F3F3F4;
   width: 6.25%;
   height: 6.25%;
   margin: 0px;
