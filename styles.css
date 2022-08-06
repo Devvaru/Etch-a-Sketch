@@ -98,17 +98,18 @@ body {
   border-right-color: #EEE5FF;
 }
 
-.pixel {
-  background: #FFF;
+.pixels {
+  background-color: #FFF;
   width: 6.25%;
   height: 6.25%;
   margin: 0px;
 }
-.pixel:hover {
+
+.pixels:hover {
   background-color:coral;
 }
 
-.pixel:focus {
+/* .pixel:focus {
   background-color:coral;
-}
+} */
 

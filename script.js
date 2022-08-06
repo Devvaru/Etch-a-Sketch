@@ -58,8 +58,18 @@ const canvas = document.createElement("div");
 canvas.id = "canvas";
 main.appendChild(canvas);
 
-const pixel = document.createElement("div");
-pixel.className = "pixel";
+// let num = prompt("Size of grid?")
+// let squared = (num * 100 / (num * num))
+// let gridSize = document.getElementByClassName(pixels).style.height = squared;
+
+let sixteen = 256; //temp until math implemented
+
+for (let i = 0; i < sixteen; i++) {
+    const pixels = document.createElement("div");
+    pixels.className = "pixels";
+    canvas.appendChild(pixels);
+    // canvas.appendChild(pixels.cloneNode(true));
+};
 
 //Buttons on the right (column)
 const buttonsRight = document.createElement("div");
@@ -74,16 +84,43 @@ buttonsRight.appendChild(eraseButton);
 
 const resetCanvas = document.createElement('button');
 resetCanvas.textContent = "Reset";
-resetCanvas.className = "button"
-resetCanvas.id = "resetButton"
+resetCanvas.className = "button";
+resetCanvas.id = "resetButton";
 buttonsRight.appendChild(resetCanvas);
 
-let sixteen = 256; //temp until math implemented
 
-// let num = prompt("Size of grid?")
-// let squared = (num * 100 / (num * num))
-// let gridSize = document.getElementByClassName(pixel).style.height = squared;
+// Drawing on the canvas
+// pixels.addEventListener('click', function onClick(event) {
+//     console.log(event.target)
+//    event.target.style.backgroundColor = "coral";
+// });
 
-for (let i = 0; i < sixteen; i++) {
- canvas.appendChild(pixel.cloneNode(true));
-}
+// let allPixels = document.getElementsByClassName("pixels");
+
+// allPixels.forEach((pixel) => {
+//     pixel.addEventListener("click", () => {
+//         pixel.style.backgroundColor = "coral";
+//     })
+// })
+
+// main.onclick = function(event) {
+//     let canvas = event.target.closest("canvas");
+//     if (!canvas) return;
+//     if (!main.contains(canvas)) return;
+//     highlight(canvas);
+
+//     console.log(div)
+// }
+
+
+// function clickHandler (e) {
+//     if (e.target.matches("pixels")) {
+//         console.log (e.target.innerHTML);
+//     }
+// }
+
+// const canvas_ = document.querySelector(".canvas");
+
+// canvas.addEventListener("click", clickHandler, () => {
+//     pixels.style.backgroundColor = "coral";
+// });
