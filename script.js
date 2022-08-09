@@ -38,7 +38,7 @@ buttonsLeft.appendChild(defaultButton);
 const grayscaleButton = document.createElement("button");
 grayscaleButton.textContent = "Grayscale";
 grayscaleButton.className = "button";
-grayscaleButton.id  = "greyScaleButton";
+grayscaleButton.id = "greyScaleButton";
 buttonsLeft.appendChild(grayscaleButton);
 
 const rainbowButton = document.createElement("button");
@@ -64,29 +64,38 @@ main.appendChild(canvas);
 
 let sixteen = 256; //temp until math implemented
 
-for (let i = 0; i < sixteen; i++) {
-    const pixels = document.createElement("div");
-    pixels.className = "pixels";
-    canvas.appendChild(pixels);
+function createPixels() { //creates pixels in canvas
 
-    canvas.addEventListener("mousedown", () => {
+    for (let i = 0; i < sixteen; i++) {
+        const pixels = document.createElement("div");
+        pixels.className = "pixels";
+        canvas.appendChild(pixels);
 
-        pixels.onmousedown = () => {
-            pixels.style.backgroundColor = "gray";
-        }
+        //starts drawing while mousedown
+        canvas.addEventListener("mousedown", () => {
 
-        pixels.onmousemove = () => {
-            pixels.style.backgroundColor = "gray";
-        }
-    });
+            pixels.onmousedown = () => {
+                pixels.style.backgroundColor = "gray";
+            }
 
-    canvas.addEventListener("mouseup", () =>  {
-        pixels.onmousemove = () => {
-            pixels.style.backgroundColor = "null";
-        }
-    })
-   
-};
+            pixels.onmousemove = () => {
+                pixels.style.backgroundColor = "gray";
+            }
+        });
+        
+        //stops drawing on mouseup (if mouseup is within background)
+        background.addEventListener("mouseup", () => {
+            pixels.onmousemove = () => {
+                pixels.style.backgroundColor = "null";
+            }
+        })
+
+    };
+
+}
+
+createPixels()
+
 
 //Buttons on the right (column)
 const buttonsRight = document.createElement("div");
