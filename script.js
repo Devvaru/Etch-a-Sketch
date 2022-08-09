@@ -129,8 +129,8 @@ slider.addEventListener("change", () => {
     const newValue = document.getElementById("slider").value;
     sliderText.textContent = "Grid size: " + newValue + " x " + newValue;
     sliderContainer.appendChild(sliderText);
-    newCanvas()
-    createPixels()
+    newCanvas();
+    createPixels();
 });
 
 const eraseButton = document.createElement("button");
@@ -144,6 +144,11 @@ resetCanvas.textContent = "Reset";
 resetCanvas.className = "button";
 resetCanvas.id = "resetButton";
 buttonsRight.appendChild(resetCanvas);
+
+resetCanvas.onclick = () => {
+    newCanvas();
+    createPixels();
+}
 
 
 // Drawing on the canvas
