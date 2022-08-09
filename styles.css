@@ -82,19 +82,27 @@ body {
 }
 
 .slider {
-  -webkit-appearance: none;  /* Override default CSS styles */
+  -webkit-appearance: none;
   appearance: none;
-  width: 100%; /* Full-width */
-  height: 10px; /* Specified height */
-  background: linear-gradient(0.25turn, #FFBE8A, #FFDF8E); /* Grey background */
-  outline: none; /* Remove outline */
-  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
-  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+  width: 100%;
+  height: 7px;
+  border-radius: 10px;
+  background: linear-gradient(0.25turn, #FFBE8A, #FFDF8E);
+  outline: none;
+  opacity: 1;
+  -webkit-transition: .2s;
   transition: opacity .2s;
 }
 
-.slider:hover {
+.slider::-webkit-slider-thumb, .slider::-moz-range-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 20px;
+  width: 20px;
+  border-radius: 20px;
+  background: #FF9139;
   cursor: pointer;
+  border: none;
 }
 
 #canvas {
