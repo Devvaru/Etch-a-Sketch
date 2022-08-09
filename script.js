@@ -68,6 +68,10 @@ for (let i = 0; i < sixteen; i++) {
     const pixels = document.createElement("div");
     pixels.className = "pixels";
     canvas.appendChild(pixels);
+
+    pixels.onclick = function(event) {
+        pixels.style.backgroundColor = "coral";
+    }
     // canvas.appendChild(pixels.cloneNode(true));
 };
 
