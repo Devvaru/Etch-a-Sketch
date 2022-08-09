@@ -67,6 +67,7 @@ let sixteen = 256; //temp until math implemented
 function createPixels() { //creates pixels in canvas
 
     for (let i = 0; i < sixteen; i++) {
+       
         const pixels = document.createElement("div");
         pixels.className = "pixels";
         canvas.appendChild(pixels);
@@ -77,7 +78,6 @@ function createPixels() { //creates pixels in canvas
             pixels.onmousedown = () => {
                 pixels.style.backgroundColor = "gray";
             }
-
             pixels.onmousemove = () => {
                 pixels.style.backgroundColor = "gray";
             }
@@ -89,10 +89,8 @@ function createPixels() { //creates pixels in canvas
                 pixels.style.backgroundColor = "null";
             }
         })
-
     };
-
-}
+};
 
 createPixels()
 
@@ -101,6 +99,15 @@ createPixels()
 const buttonsRight = document.createElement("div");
 buttonsRight.id = "buttonsRight";
 main.appendChild(buttonsRight);
+
+//Slider slider.value()
+const slider = document.createElement("input");
+slider.setAttribute("type", "range");
+slider.min = "1";
+slider.max = "100";
+slider.value = "16";
+slider.className = "slider"
+buttonsRight.appendChild(slider);
 
 const eraseButton = document.createElement("button");
 eraseButton.textContent = "Eraser";
