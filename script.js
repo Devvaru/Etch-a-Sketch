@@ -59,14 +59,14 @@ canvas.id = "canvas";
 main.appendChild(canvas);
 
 // let num = prompt("Size of grid?")
-// let squared = (num * 100 / (num * num))
+let squared = 256;
 // let gridSize = document.getElementByClassName(pixels).style.height = squared;
 
-let sixteen = 256; //temp until math implemented
+// let sixteen = 256; //temp until math implemented
 
 function createPixels() { //creates pixels in canvas
 
-    for (let i = 0; i < sixteen; i++) {
+    for (let i = 0; i < squared; i++) {
        
         const pixels = document.createElement("div");
         pixels.className = "pixels";
@@ -89,6 +89,8 @@ function createPixels() { //creates pixels in canvas
                 pixels.style.backgroundColor = "null";
             }
         })
+
+        // document.getElementsByClassName("pixels")[i].style.height = gridPercent;
     };
 };
 
@@ -130,6 +132,21 @@ slider.addEventListener("change", () => {
     sliderText.textContent = "Grid size: " + newValue + " x " + newValue;
     sliderContainer.appendChild(sliderText);
     newCanvas();
+    
+
+    //used to create pixels
+    squared = (newValue * newValue)
+    console.log(squared);
+
+    //calculate percentage for pixel size of canvas
+    let gridPercent = (newValue * 100 / (newValue * newValue)) + "%";
+    console.log(newValue);
+    console.log(gridPercent);
+    
+
+    //changes grid size in css
+    // document.getElementsByClassName("pixels")[i].style.height = gridPercent;
+
     createPixels();
 });
 
