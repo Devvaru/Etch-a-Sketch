@@ -69,10 +69,16 @@ for (let i = 0; i < sixteen; i++) {
     pixels.className = "pixels";
     canvas.appendChild(pixels);
 
-    pixels.onclick = function(event) {
-        pixels.style.backgroundColor = "coral";
+    pixels.onmousedown = () => {
+        pixels.style.backgroundColor = "gray";
     }
-    // canvas.appendChild(pixels.cloneNode(true));
+
+    canvas.addEventListener("mousedown", () => {
+        pixels.onmouseenter = () => {
+            pixels.style.backgroundColor = "gray";
+        }
+    });
+   
 };
 
 //Buttons on the right (column)

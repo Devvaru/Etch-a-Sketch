@@ -106,7 +106,7 @@ body {
 }
 
 .pixels:hover {
-  background-color:coral;
+  background-color:gray;
 }
 
 /* .pixel:focus {
