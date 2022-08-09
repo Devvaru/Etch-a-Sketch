@@ -69,15 +69,22 @@ for (let i = 0; i < sixteen; i++) {
     pixels.className = "pixels";
     canvas.appendChild(pixels);
 
-    pixels.onmousedown = () => {
-        pixels.style.backgroundColor = "gray";
-    }
-
     canvas.addEventListener("mousedown", () => {
-        pixels.onmouseenter = () => {
+
+        pixels.onmousedown = () => {
+            pixels.style.backgroundColor = "gray";
+        }
+
+        pixels.onmousemove = () => {
             pixels.style.backgroundColor = "gray";
         }
     });
+
+    canvas.addEventListener("mouseup", () =>  {
+        pixels.onmousemove = () => {
+            pixels.style.backgroundColor = "null";
+        }
+    })
    
 };
 
