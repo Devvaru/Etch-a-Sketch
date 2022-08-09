@@ -94,6 +94,9 @@ function createPixels() { //creates pixels in canvas
 
 createPixels()
 
+function newCanvas() {
+    canvas.replaceChildren();
+}
 
 //Buttons on the right (column)
 const buttonsRight = document.createElement("div");
@@ -126,6 +129,8 @@ slider.addEventListener("change", () => {
     const newValue = document.getElementById("slider").value;
     sliderText.textContent = "Grid size: " + newValue + " x " + newValue;
     sliderContainer.appendChild(sliderText);
+    newCanvas()
+    createPixels()
 });
 
 const eraseButton = document.createElement("button");
