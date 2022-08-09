@@ -100,14 +100,33 @@ const buttonsRight = document.createElement("div");
 buttonsRight.id = "buttonsRight";
 main.appendChild(buttonsRight);
 
+const sliderContainer = document.createElement("div");
+sliderContainer.className = "sliderContainer";
+sliderContainer.id = "sliderContainer";
+buttonsRight.appendChild(sliderContainer);
+
 //Slider slider.value()
 const slider = document.createElement("input");
 slider.setAttribute("type", "range");
 slider.min = "1";
 slider.max = "100";
 slider.value = "16";
-slider.className = "slider"
-buttonsRight.appendChild(slider);
+slider.className = "slider";
+slider.id = "slider";
+sliderContainer.appendChild(slider);
+
+const defaultValue = document.getElementById("slider").value;
+const sliderText = document.createElement("p");
+sliderText.id = "sliderText";
+sliderText.className = "sliderText"
+sliderText.textContent = "Grid size: " + defaultValue + " x " + defaultValue;
+sliderContainer.appendChild(sliderText);
+
+slider.addEventListener("change", () => {
+    const newValue = document.getElementById("slider").value;
+    sliderText.textContent = "Grid size: " + newValue + " x " + newValue;
+    sliderContainer.appendChild(sliderText);
+});
 
 const eraseButton = document.createElement("button");
 eraseButton.textContent = "Eraser";

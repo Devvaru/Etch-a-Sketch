@@ -29,6 +29,12 @@ body {
   margin: 0px;
 }
 
+p {
+  font-family: "Open Sans", sans-serif;
+  font-size: 17px;
+  color: #420f6e;
+}
+
 #title {
   font-family: "whisper";
   font-size: 75px;
@@ -80,6 +86,10 @@ body {
   box-shadow: -3px -3px 3px #FFFFFF, -10px -10px 20px #FFFFFF, 1px 1px 5px #D9AEFF, 10px 10px 20px #E2C1FF;
   cursor: pointer;
 }
+
+/* .sliderContainer {
+
+} */
 
 .slider {
   -webkit-appearance: none;
