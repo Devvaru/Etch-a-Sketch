@@ -186,10 +186,16 @@ resetCanvas.onclick = () => {
     newGrid();
 };
 
-//Default button listener -- unfinished
-// defaultButton.onclick = () => {
-//     brushColor = "black";
-// }
+// Default button listener
+defaultButton.onclick = () => {
+    brushColor = defaultColor;
+}
+
+//Grayscale button listener
+grayscaleButton.onclick = () => {
+    canvas.style.background = "#FFF"
+    brushColor = "rgba(128, 128, 128, 0.1)"
+}
 
 //Rainbow button listener
 rainbowButton.onclick = () => {
