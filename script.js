@@ -1,9 +1,3 @@
-//to calculate grid size
-
-// let squared = (button selection) ;
-// let grid = (squared)
-// let num (pixel width and height ) = (square * 100) / grid;
-
 const body = document.querySelectorAll('body');
 const background = document.getElementById('background');
 
@@ -23,6 +17,7 @@ header.appendChild(title);
 const main = document.createElement("div");
 main.id = "main"
 container.appendChild(main);
+
 
 //Buttons on the left (column)
 const buttonsLeft = document.createElement("div");
@@ -146,6 +141,9 @@ sliderText.className = "sliderText"
 sliderText.textContent = "Grid size: " + defaultValue + " x " + defaultValue;
 sliderContainer.appendChild(sliderText);
 
+const allPixels  = document.getElementsByClassName("pixels");
+console.log(allPixels);
+
 //Slider listener
 slider.addEventListener("change", () => {
 
@@ -156,18 +154,25 @@ slider.addEventListener("change", () => {
 
     //used to create pixels
     squared = (newValue * newValue)
-    console.log(squared);
+    console.log("newValue is = " + newValue);
+    console.log("squared = " + squared);
 
     //calculate percentage for pixel size of canvas
     let gridPercent = (newValue * 100 / (newValue * newValue)) + "%";
-    console.log(newValue);
-    console.log(gridPercent);
+    console.log("gridPercent is = " + gridPercent);
     
-
     //changes grid size in css
-    // document.getElementsByClassName("pixels")[i].style.height = gridPercent;
-
+    // document.getElementsByClassName("pixels").style.height = gridPercent;
     createPixels();
+    console.log(allPixels);
+    for (let i = 0; i < allPixels.length; i++) {
+        allPixels[i].style.height = gridPercent;
+    }
+    for (let i = 0; i < allPixels.length; i++) {
+        allPixels[i].style.width = gridPercent;
+    }
+
+    
 });
 
 //Reset button listener
