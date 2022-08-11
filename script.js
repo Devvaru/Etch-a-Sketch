@@ -83,11 +83,7 @@ const canvas = document.createElement("div");
 canvas.id = "canvas";
 main.appendChild(canvas);
 
-// let num = prompt("Size of grid?")
 let squared = 256;
-// let gridSize = document.getElementByClassName(pixels).style.height = squared;
-
-// let sixteen = 256; //temp until math implemented
 
 function createPixels() { //creates pixels in canvas
 
