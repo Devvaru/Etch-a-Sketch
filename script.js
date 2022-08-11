@@ -38,17 +38,17 @@ rainbowButton.textContent = "Rainbow";
 rainbowButton.className = "button";
 rainbowButton.id = "rainbowButton";
 
-const scratchButton = document.createElement("button");
-scratchButton.textContent = "Scratch";
-scratchButton.className = "button";
-scratchButton.id = "scratch";
+const randomButton = document.createElement("button");
+randomButton.textContent = "Random";
+randomButton.className = "button";
+randomButton.id = "random";
 
 //Append buttonsLeft
 main.appendChild(buttonsLeft);
 buttonsLeft.appendChild(defaultButton);
 buttonsLeft.appendChild(grayscaleButton);
 buttonsLeft.appendChild(rainbowButton);
-buttonsLeft.appendChild(scratchButton);
+buttonsLeft.appendChild(randomButton);
 
 
 //Buttons on the right (column)
@@ -69,7 +69,7 @@ slider.className = "slider";
 slider.id = "slider";
 
 const eraseButton = document.createElement("button");
-eraseButton.textContent = "Eraser";
+eraseButton.textContent = "Toggle Eraser";
 eraseButton.className = "button";
 eraseButton.id = "eraseButton";
 
@@ -185,3 +185,13 @@ resetCanvas.onclick = () => {
     clearCanvas();
     newGrid();
 };
+
+//Default button listener -- unfinished
+// defaultButton.onclick = () => {
+//     brushColor = "black";
+// }
+
+//Rainbow button listener
+rainbowButton.onclick = () => {
+    brushColor = "transparent";
+}
