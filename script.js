@@ -1,11 +1,11 @@
-const body = document.querySelectorAll('body');
-const background = document.getElementById('background');
+const body = document.querySelectorAll("body");
+const background = document.getElementById("background");
 
-const container = document.createElement('div');
+const container = document.createElement("div");
 container.id = "container";
 background.appendChild(container);
 
-const header = document.createElement('div');
+const header = document.createElement("div");
 header.id = "header";
 container.appendChild(header);
 
@@ -73,7 +73,7 @@ eraseButton.textContent = "Eraser";
 eraseButton.className = "button";
 eraseButton.id = "eraseButton";
 
-const resetCanvas = document.createElement('button');
+const resetCanvas = document.createElement("button");
 resetCanvas.textContent = "Reset";
 resetCanvas.className = "button";
 resetCanvas.id = "resetButton";
@@ -122,7 +122,7 @@ function createPixels() { //creates pixels in canvas
 createPixels()
 
 //Resets canvas by removing pixels as children
-function newCanvas() {
+function clearCanvas() {
     canvas.replaceChildren();
 }
 
@@ -141,16 +141,15 @@ sliderText.className = "sliderText"
 sliderText.textContent = "Grid size: " + defaultValue + " x " + defaultValue;
 sliderContainer.appendChild(sliderText);
 
+
+//Function for changing grid size
 const allPixels  = document.getElementsByClassName("pixels");
-console.log(allPixels);
 
-//Slider listener
-slider.addEventListener("change", () => {
-
+function newGrid() {
     const newValue = document.getElementById("slider").value;
     sliderText.textContent = "Grid size: " + newValue + " x " + newValue;
     sliderContainer.appendChild(sliderText);
-    newCanvas();
+    clearCanvas();
 
     //used to create pixels
     squared = (newValue * newValue)
@@ -162,60 +161,20 @@ slider.addEventListener("change", () => {
     console.log("gridPercent is = " + gridPercent);
     
     //changes grid size in css
-    // document.getElementsByClassName("pixels").style.height = gridPercent;
     createPixels();
-    console.log(allPixels);
     for (let i = 0; i < allPixels.length; i++) {
         allPixels[i].style.height = gridPercent;
-    }
-    for (let i = 0; i < allPixels.length; i++) {
         allPixels[i].style.width = gridPercent;
-    }
+    };
+};
 
-    
+//Slider listener
+slider.addEventListener("change", () => {
+    newGrid()
 });
 
 //Reset button listener
 resetCanvas.onclick = () => {
-    newCanvas();
-    createPixels();
-}
-
-
-
-
-// Drawing on the canvas
-// pixels.addEventListener('click', function onClick(event) {
-//     console.log(event.target)
-//    event.target.style.backgroundColor = "coral";
-// });
-
-// let allPixels = document.getElementsByClassName("pixels");
-
-// allPixels.forEach((pixel) => {
-//     pixel.addEventListener("click", () => {
-//         pixel.style.backgroundColor = "coral";
-//     })
-// })
-
-// main.onclick = function(event) {
-//     let canvas = event.target.closest("canvas");
-//     if (!canvas) return;
-//     if (!main.contains(canvas)) return;
-//     highlight(canvas);
-
-//     console.log(div)
-// }
-
-
-// function clickHandler (e) {
-//     if (e.target.matches("pixels")) {
-//         console.log (e.target.innerHTML);
-//     }
-// }
-
-// const canvas_ = document.querySelector(".canvas");
-
-// canvas.addEventListener("click", clickHandler, () => {
-//     pixels.style.backgroundColor = "coral";
-// });
+    clearCanvas();
+    newGrid();
+};
