@@ -191,7 +191,7 @@ defaultButton.onclick = () => {
     brushColor = defaultColor;
 }
 
-//Grayscale button listener
+//Grayscale button listener -- unfinished
 grayscaleButton.onclick = () => {
     canvas.style.background = "#FFF"
     brushColor = "rgba(128, 128, 128, 0.1)"

@@ -1,5 +1,5 @@
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "montserrat", sans-serif;
   background: linear-gradient(180deg, #DDCDFF 0%, #9CC2FA 100%);
   margin: 0px;
   height: 100vh;
@@ -30,7 +30,7 @@ body {
 }
 
 p {
-  font-family: "Open Sans", sans-serif;
+  font-family: "montserrat", sans-serif;
   font-size: 17px;
   color: #420f6e;
 }
@@ -69,8 +69,8 @@ p {
 .button {
   color: #fff;
   font-size: 21px;
-  font-weight: 500;
-  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  font-family: "montserrat", sans-serif;
   background: linear-gradient(157.82deg, #FFBE8A 14.48%, #FFDF8E 85.52%);
   border-radius: 16px;
   padding: 20px;
