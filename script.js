@@ -83,12 +83,15 @@ const canvas = document.createElement("div");
 canvas.id = "canvas";
 main.appendChild(canvas);
 
+let backgroundColor = "white";
+let defaultColor = "gray";
+let brushColor = defaultColor;
 let squared = 256;
 
 function createPixels() { //creates pixels in canvas
 
     for (let i = 0; i < squared; i++) {
-       
+
         const pixels = document.createElement("div");
         pixels.className = "pixels";
         canvas.appendChild(pixels);
@@ -97,13 +100,13 @@ function createPixels() { //creates pixels in canvas
         canvas.addEventListener("mousedown", () => {
 
             pixels.onmousedown = () => {
-                pixels.style.backgroundColor = "gray";
+                pixels.style.backgroundColor = brushColor;
             }
             pixels.onmousemove = () => {
-                pixels.style.backgroundColor = "gray";
+                pixels.style.backgroundColor = brushColor;
             }
         });
-        
+
         //stops drawing on mouseup (if mouseup is within background)
         background.addEventListener("mouseup", () => {
             pixels.onmousemove = () => {
@@ -139,7 +142,7 @@ sliderContainer.appendChild(sliderText);
 
 
 //Function for changing grid size
-const allPixels  = document.getElementsByClassName("pixels");
+const allPixels = document.getElementsByClassName("pixels");
 
 function newGrid() {
     const newValue = document.getElementById("slider").value;
@@ -155,7 +158,7 @@ function newGrid() {
     //calculate percentage for pixel size of canvas
     let gridPercent = (newValue * 100 / (newValue * newValue)) + "%";
     console.log("gridPercent is = " + gridPercent);
-    
+
     //changes grid size in css
     createPixels();
     for (let i = 0; i < allPixels.length; i++) {
@@ -168,6 +171,14 @@ function newGrid() {
 slider.addEventListener("change", () => {
     newGrid()
 });
+
+//Eraser listener
+eraseButton.onclick = () => {
+    eraseButton.classList.toggle("active");
+    if (eraseButton.classList.contains("active")) {
+        brushColor = backgroundColor;
+    } else brushColor = defaultColor;
+};
 
 //Reset button listener
 resetCanvas.onclick = () => {
