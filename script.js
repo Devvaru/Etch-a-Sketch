@@ -28,10 +28,10 @@ defaultButton.textContent = "Default";
 defaultButton.className = "button";
 defaultButton.id = "defaultButton";
 
-const grayscaleButton = document.createElement("button");
-grayscaleButton.textContent = "Grayscale";
-grayscaleButton.className = "button";
-grayscaleButton.id = "greyScaleButton";
+const shadingButton = document.createElement("button");
+shadingButton.textContent = "Toggle Shading";
+shadingButton.className = "button";
+shadingButton.id = "shadingButton";
 
 const rainbowButton = document.createElement("button");
 rainbowButton.textContent = "Rainbow";
@@ -46,7 +46,7 @@ randomButton.id = "random";
 //Append buttonsLeft
 main.appendChild(buttonsLeft);
 buttonsLeft.appendChild(defaultButton);
-buttonsLeft.appendChild(grayscaleButton);
+buttonsLeft.appendChild(shadingButton);
 buttonsLeft.appendChild(rainbowButton);
 buttonsLeft.appendChild(randomButton);
 
@@ -114,7 +114,8 @@ function createPixels() { //creates pixels in canvas
             }
         })
 
-        // document.getElementsByClassName("pixels")[i].style.height = gridPercent;
+
+        //if (shadingButton toggled on (active)) - onclick change color only by 10% opacity
     };
 };
 
@@ -177,7 +178,7 @@ eraseButton.onclick = () => {
     eraseButton.classList.toggle("active");
     if (eraseButton.classList.contains("active")) {
         brushColor = backgroundColor;
-    } else brushColor = defaultColor;
+    } else brushColor = defaultColor; //change to current color
 };
 
 //Reset button listener
@@ -189,15 +190,15 @@ resetCanvas.onclick = () => {
 // Default button listener
 defaultButton.onclick = () => {
     brushColor = defaultColor;
-}
+};
 
-//Grayscale button listener -- unfinished
-grayscaleButton.onclick = () => {
+//shading button listener -- unfinished
+shadingButton.onclick = () => {
     canvas.style.background = "#FFF"
-    brushColor = "rgba(128, 128, 128, 0.1)"
-}
+    brushColor = "FF000080"
+};
 
 //Rainbow button listener
 rainbowButton.onclick = () => {
     brushColor = "transparent";
-}
+};
