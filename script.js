@@ -81,10 +81,11 @@ resetCanvas.id = "resetButton";
 //Drawing area
 const canvas = document.createElement("div");
 canvas.id = "canvas";
+canvas.className = "canvas canvas_bg";
 main.appendChild(canvas);
 
 let backgroundColor = "white";
-let defaultColor = "gray";
+let defaultColor = "rgba(128,128,128, 1)";
 let brushColor = defaultColor;
 let squared = 256;
 
@@ -105,6 +106,8 @@ function createPixels() { //creates pixels in canvas
             pixels.onmousemove = () => {
                 pixels.style.backgroundColor = brushColor;
             }
+
+           
         });
 
         //stops drawing on mouseup (if mouseup is within background)
@@ -113,9 +116,6 @@ function createPixels() { //creates pixels in canvas
                 pixels.style.backgroundColor = "null";
             }
         })
-
-
-        //if (shadingButton toggled on (active)) - onclick change color only by 10% opacity
     };
 };
 
@@ -193,12 +193,19 @@ defaultButton.onclick = () => {
 };
 
 //shading button listener -- unfinished
-shadingButton.onclick = () => {
-    canvas.style.background = "#FFF"
-    brushColor = "FF000080"
-};
+// shadingButton.onclick = () => {
+//     shadingButton.classList.toggle("active");
+
+//     if (shadingButton.classList.contains("active")) {
+//         canvas.classList.add = "canvas_bg"
+//         brushColor = "rgba(128,128,128, 0.1)"
+//         //change color only by 10% opacity
+//     };
+// };
 
 //Rainbow button listener
 rainbowButton.onclick = () => {
+    canvas.classList.remove("canvas_bg");
+    canvas.classList.add("canvas_rainbow");
     brushColor = "transparent";
 };
