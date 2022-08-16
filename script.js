@@ -55,6 +55,19 @@ buttonsLeft.appendChild(randomButton);
 const buttonsRight = document.createElement("div");
 buttonsRight.id = "buttonsRight";
 
+const colorContainer = document.createElement("div");
+colorContainer.className = "colorContainer";
+colorContainer.id = "colorContainer";
+
+const colorPicker = document.createElement("input");
+colorPicker.setAttribute("type", "color");
+colorPicker.className = "colorPicker";
+colorPicker.id = "colorPicker";
+
+const colorBox = document.createElement("button");
+colorBox.className = "colorBox";
+colorBox.id = "colorBox";
+
 const sliderContainer = document.createElement("div");
 sliderContainer.className = "sliderContainer";
 sliderContainer.id = "sliderContainer";
@@ -77,6 +90,7 @@ const resetCanvas = document.createElement("button");
 resetCanvas.textContent = "Reset";
 resetCanvas.className = "button";
 resetCanvas.id = "resetButton";
+
 
 //Drawing area
 const canvas = document.createElement("div");
@@ -126,8 +140,12 @@ function clearCanvas() {
     canvas.replaceChildren();
 }
 
-//Append buttonsRight, declared earlier than canvas but appended after
+//Append buttonsRight, declared before canvas but appended after
+
 main.appendChild(buttonsRight);
+buttonsRight.appendChild(colorContainer);
+colorContainer.appendChild(colorPicker);
+colorContainer.appendChild(colorBox);
 buttonsRight.appendChild(sliderContainer);
 sliderContainer.appendChild(slider);
 buttonsRight.appendChild(eraseButton);
