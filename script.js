@@ -138,7 +138,7 @@ const defaultValue = document.getElementById("slider").value;
 const sliderText = document.createElement("p");
 sliderText.id = "sliderText";
 sliderText.className = "sliderText"
-sliderText.textContent = "Grid size: " + defaultValue + " x " + defaultValue;
+sliderText.textContent = "Canvas size: " + defaultValue + " x " + defaultValue;
 sliderContainer.appendChild(sliderText);
 
 
@@ -147,7 +147,7 @@ const allPixels = document.getElementsByClassName("pixels");
 
 function newGrid() {
     const newValue = document.getElementById("slider").value;
-    sliderText.textContent = "Grid size: " + newValue + " x " + newValue;
+    sliderText.textContent = "Canvas size: " + newValue + " x " + newValue;
     sliderContainer.appendChild(sliderText);
     clearCanvas();
 
