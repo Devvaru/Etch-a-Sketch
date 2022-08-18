@@ -1,6 +1,8 @@
+/* Commented out elements are for future light mode */
+
 body {
   font-family: "montserrat", sans-serif;
-  background: linear-gradient(180deg, #DDCDFF 0%, #9CC2FA 100%);
+  /* background: linear-gradient(180deg, #DDCDFF 0%, #9CC2FA 100%); */
   background: linear-gradient(180deg, #33364D 0%, #14181F 100%);
   margin: 0px;
   height: 100vh;
@@ -13,7 +15,7 @@ body {
 #background {
   background: #F8F0FF;
   background: #41445A;
-  box-shadow: 30px 30px 80px -7px rgba(28, 72, 227, 0.5);
+  /* box-shadow: 30px 30px 80px -7px rgba(28, 72, 227, 0.5); */
   box-shadow: 30px 30px 80px -7px #161B23;
   border-radius: 42px;
   display: flex;
@@ -35,8 +37,9 @@ body {
 p {
   font-family: "montserrat", sans-serif;
   font-size: 17px;
-  color: #420f6e;
+  /* color: #420f6e; */
   color: #FFF;
+  margin: 15px 0px 0px 0px;
 }
 
 #title {
@@ -44,7 +47,7 @@ p {
   font-size: 75px;
   text-align: center;
   margin: 0px;
-  color: #cba5ec;
+  /* color: #cba5ec; */
   color: #FE9330;
   background: linear-gradient(180.1deg, #FE9330 23.35%, #984900 99.91%), #874FFF;
   -webkit-background-clip: text;
@@ -79,7 +82,7 @@ p {
   font-size: 21px;
   font-weight: 600;
   font-family: "montserrat", sans-serif;
-  background: linear-gradient(157.82deg, #FFBE8A 14.48%, #FFDF8E 85.52%);
+  /* background: linear-gradient(157.82deg, #FFBE8A 14.48%, #FFDF8E 85.52%); */
   background: linear-gradient(97.18deg, #C26814 0%, #F88F2D 100%);
   border-radius: 16px;
   padding: 20px;
@@ -92,12 +95,12 @@ p {
 }
 
 .button:hover {
-  box-shadow: -3px -3px 3px #FFFFFF, -10px -10px 20px #FFFFFF, 1px 1px 5px #D9AEFF, 10px 10px 20px #E2C1FF;
+  /* box-shadow: -3px -3px 3px #FFFFFF, -10px -10px 20px #FFFFFF, 1px 1px 5px #D9AEFF, 10px 10px 20px #E2C1FF; */
   box-shadow: -3px -3px 5px #5C5F76, -10px -10px 20px #5C5F76, 1px 1px 10px #303348, 10px 10px 20px #303348;
 }
 
 .active {
-  box-shadow: -3px -3px 3px #FFFFFF, -10px -10px 20px #FFFFFF, 1px 1px 5px #D9AEFF, 10px 10px 20px #E2C1FF;
+  /* box-shadow: -3px -3px 3px #FFFFFF, -10px -10px 20px #FFFFFF, 1px 1px 5px #D9AEFF, 10px 10px 20px #E2C1FF; */
   box-shadow: -3px -3px 5px #5C5F76, -10px -10px 20px #5C5F76, 1px 1px 10px #303348, 10px 10px 20px #303348;
 }
 
@@ -107,7 +110,7 @@ p {
   width: 100%;
   height: 7px;
   border-radius: 10px;
-  background: linear-gradient(0.25turn, #FFBE8A, #FFDF8E);
+  /* background: linear-gradient(0.25turn, #FFBE8A, #FFDF8E); */
   background: linear-gradient(0.25turn, #FB7900, #FFBC11);
   outline: none;
   opacity: 1;
@@ -121,7 +124,7 @@ p {
   height: 20px;
   width: 20px;
   border-radius: 20px;
-  background: #FF9139;
+  /* background: #FF9139; */
   background: #FF6B00;
   cursor: pointer;
   border: none;
@@ -129,17 +132,22 @@ p {
 
 .colorContainer {
   display: flex;
+  align-items: center;
+  justify-content: center;
   margin: 0px;
+  height: 65px;
+  width: 100%;
 }
 
 .colorPicker {
-  background: #FF9139;
+  background: linear-gradient(120deg, #FF2424 0%, #FF9C29 19.19%, #FFE279 38.15%, #84E599 59.51%, #5EBBFF 82.27%, #B924FF 100%);
   -webkit-appearance: none;
   border: none;
-  padding: 0px;
-  width: 35px;
-  height: 30px;
-  border-radius: 0px;
+  padding: 15px 40px 15px 40px;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  cursor: pointer;
 }
 
 .colorPicker::-webkit-color-swatch-wrapper {
@@ -172,10 +180,10 @@ p {
   align-content: center;
   border-style: solid;
   border-width: 8px;
-  border-top-color: #DDCDFF;
+  /* border-top-color: #DDCDFF;
   border-left-color: #DDCDFF;
   border-bottom-color: #EEE5FF;
-  border-right-color: #EEE5FF;
+  border-right-color: #EEE5FF; */
   border-top-color: #2C3042;
   border-left-color: #2C3042;
   border-bottom-color: #656A8F;

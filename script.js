@@ -55,6 +55,18 @@ buttonsLeft.appendChild(randomButton);
 const buttonsRight = document.createElement("div");
 buttonsRight.id = "buttonsRight";
 
+const sliderContainer = document.createElement("div");
+sliderContainer.className = "sliderContainer";
+sliderContainer.id = "sliderContainer";
+
+const slider = document.createElement("input");
+slider.setAttribute("type", "range");
+slider.min = "1";
+slider.max = "100";
+slider.value = "16";
+slider.className = "slider";
+slider.id = "slider";
+
 const colorContainer = document.createElement("div");
 colorContainer.className = "colorContainer";
 colorContainer.id = "colorContainer";
@@ -67,19 +79,6 @@ colorPicker.id = "colorPicker";
 const colorBox = document.createElement("button");
 colorBox.className = "colorBox";
 colorBox.id = "colorBox";
-
-const sliderContainer = document.createElement("div");
-sliderContainer.className = "sliderContainer";
-sliderContainer.id = "sliderContainer";
-
-//Slider slider.value()
-const slider = document.createElement("input");
-slider.setAttribute("type", "range");
-slider.min = "1";
-slider.max = "100";
-slider.value = "16";
-slider.className = "slider";
-slider.id = "slider";
 
 const eraseButton = document.createElement("button");
 eraseButton.textContent = "Toggle Eraser";
@@ -99,7 +98,7 @@ canvas.className = "canvas canvas_bg";
 main.appendChild(canvas);
 
 let backgroundColor = "white";
-let defaultColor = "rgba(128,128,128, 1)";
+let defaultColor = "black";
 let brushColor = defaultColor;
 let squared = 256;
 
@@ -121,7 +120,6 @@ function createPixels() { //creates pixels in canvas
                 pixels.style.backgroundColor = brushColor;
             }
 
-           
         });
 
         //stops drawing on mouseup (if mouseup is within background)
@@ -143,11 +141,10 @@ function clearCanvas() {
 //Append buttonsRight, declared before canvas but appended after
 
 main.appendChild(buttonsRight);
-buttonsRight.appendChild(colorContainer);
-colorContainer.appendChild(colorPicker);
-colorContainer.appendChild(colorBox);
 buttonsRight.appendChild(sliderContainer);
 sliderContainer.appendChild(slider);
+buttonsRight.appendChild(colorContainer);
+colorContainer.appendChild(colorPicker);
 buttonsRight.appendChild(eraseButton);
 buttonsRight.appendChild(resetCanvas);
 
@@ -186,10 +183,18 @@ function newGrid() {
     };
 };
 
+
+//Button event listeners
+
 //Slider listener
 slider.addEventListener("change", () => {
     newGrid()
 });
+
+//Color listener
+colorPicker.onchange = () => {
+    brushColor = colorPicker.value;
+}
 
 //Eraser listener
 eraseButton.onclick = () => {
