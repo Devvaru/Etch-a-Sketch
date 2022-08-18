@@ -201,7 +201,7 @@ eraseButton.onclick = () => {
     eraseButton.classList.toggle("active");
     if (eraseButton.classList.contains("active")) {
         brushColor = backgroundColor;
-    } else brushColor = defaultColor; //change to current color
+    } else brushColor = colorPicker.value; //change to current color
 };
 
 //Reset button listener
