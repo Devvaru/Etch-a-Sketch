@@ -114,9 +114,11 @@ function createPixels() { //creates pixels in canvas
         canvas.addEventListener("mousedown", () => {
 
             pixels.onmousedown = () => {
+                
                 pixels.style.backgroundColor = brushColor;
             }
             pixels.onmousemove = () => {
+
                 pixels.style.backgroundColor = brushColor;
             }
 
@@ -200,8 +202,18 @@ colorPicker.onchange = () => {
 eraseButton.onclick = () => {
     eraseButton.classList.toggle("active");
     if (eraseButton.classList.contains("active")) {
-        brushColor = backgroundColor;
-    } else brushColor = colorPicker.value; //change to current color
+        brushColor = "#FFFFFF";
+    } else if (eraseButton.classList.contains("active") && rainbowButton.classList.contains("active")) {
+        brushColor = "#FFFFFF";
+    } else if (eraseButton.classList.contains("active") && !rainbowButton.classList.contains("active")) {
+        brushColor = "#FFFFFF";
+    } else if (!eraseButton.classList.contains("active") && rainbowButton.classList.contains("active")) {
+        brushColor = "transparent";
+    }
+    else brushColor = colorPicker.value; //change to current color
+    console.log(backgroundColor);
+    console.log(brushColor);
+    console.log(colorPicker.value);
 };
 
 //Reset button listener
@@ -227,20 +239,28 @@ defaultButton.onclick = () => {
 //     };
 // };
 
-//Rainbow button listener
-// rainbowButton.onclick = () => {
-//     canvas.classList.remove("canvas_bg");
-//     canvas.classList.add("canvas_rainbow");
-//     brushColor = "transparent";
-// };
-
 rainbowButton.onclick = () => {
     rainbowButton.classList.toggle("active");
     console.log(brushColor);
     if (rainbowButton.classList.contains("active")) {
-        canvas.classList.remove("canvas_bg");
         canvas.classList.add("canvas_rainbow");
         brushColor = "transparent";
-        
-    } else brushColor = colorPicker.value;
+
+    } else if (!rainbowButton.classList.contains("active")) {
+        brushColor = colorPicker.value;
+    }
+};
+
+function randomColor() {
+    let randomNum = Math.floor(Math.random() * 16777215).toString(16);
+    let randomColor = "#" + randomNum;
+    rainbowButton.classList.toggle("active");
+    return randomColor;
+};
+
+randomButton.onclick = () => {
+    rainbowButton.classList.toggle("active");
+    // brushColor = randomColor();
+    // colorPicker.value = brushColor;
+
 };
