@@ -213,6 +213,7 @@ resetCanvas.onclick = () => {
 // Default button listener
 defaultButton.onclick = () => {
     brushColor = defaultColor;
+    colorPicker.value = defaultColor;
 };
 
 //shading button listener -- unfinished
