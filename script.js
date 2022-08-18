@@ -34,7 +34,7 @@ shadingButton.className = "button";
 shadingButton.id = "shadingButton";
 
 const rainbowButton = document.createElement("button");
-rainbowButton.textContent = "Rainbow";
+rainbowButton.textContent = "Toggle Rainbow";
 rainbowButton.className = "button";
 rainbowButton.id = "rainbowButton";
 
@@ -227,8 +227,19 @@ defaultButton.onclick = () => {
 // };
 
 //Rainbow button listener
+// rainbowButton.onclick = () => {
+//     canvas.classList.remove("canvas_bg");
+//     canvas.classList.add("canvas_rainbow");
+//     brushColor = "transparent";
+// };
+
 rainbowButton.onclick = () => {
-    canvas.classList.remove("canvas_bg");
-    canvas.classList.add("canvas_rainbow");
-    brushColor = "transparent";
+    rainbowButton.classList.toggle("active");
+    console.log(brushColor);
+    if (rainbowButton.classList.contains("active")) {
+        canvas.classList.remove("canvas_bg");
+        canvas.classList.add("canvas_rainbow");
+        brushColor = "transparent";
+        
+    } else brushColor = colorPicker.value;
 };
