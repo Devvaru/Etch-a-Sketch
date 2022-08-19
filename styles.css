@@ -180,6 +180,7 @@ p {
   align-content: center;
   border-style: solid;
   border-width: 8px;
+  background: #FFF;
   /* border-top-color: #DDCDFF;
   border-left-color: #DDCDFF;
   border-bottom-color: #EEE5FF;
@@ -193,10 +194,6 @@ p {
   -webkit-user-select: none;
   -ms-user-select: none;
    user-select: none;
-}
-
-.canvas_bg {
-  background: #FFF;
 }
 
 .canvas_rainbow {

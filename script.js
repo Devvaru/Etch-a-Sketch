@@ -32,11 +32,6 @@ shadingButton.textContent = "Shading";
 shadingButton.className = "button";
 shadingButton.id = "shadingButton";
 
-const rainbowButton = document.createElement("button");
-rainbowButton.textContent = "Rainbow";
-rainbowButton.className = "button";
-rainbowButton.id = "rainbowButton";
-
 const randomButton = document.createElement("button");
 randomButton.textContent = "Random";
 randomButton.className = "button";
@@ -46,7 +41,6 @@ randomButton.id = "random";
 main.appendChild(buttonsLeft);
 buttonsLeft.appendChild(drawButton);
 buttonsLeft.appendChild(shadingButton);
-buttonsLeft.appendChild(rainbowButton);
 buttonsLeft.appendChild(randomButton);
 
 //Buttons on the right (column)
@@ -79,7 +73,7 @@ colorBox.className = "colorBox";
 colorBox.id = "colorBox";
 
 const eraseButton = document.createElement("button");
-eraseButton.textContent = "Eraser";
+eraseButton.textContent = "Erase";
 eraseButton.className = "button";
 eraseButton.id = "eraseButton";
 
@@ -92,7 +86,7 @@ resetCanvas.id = "resetButton";
 //Drawing area///////////////////////////////
 const canvas = document.createElement("div");
 canvas.id = "canvas";
-canvas.className = "canvas canvas_bg";
+canvas.className = "canvas";
 main.appendChild(canvas);
 
 let backgroundColor = "white";
@@ -112,19 +106,27 @@ function createPixels() { //creates pixels in canvas
         canvas.addEventListener("mousedown", () => {
 
             pixels.onmousedown = () => {
-                pixels.style.backgroundColor = brushColor;
-            }
+
+                if (randomButton.classList.contains("active")) {
+                    pixels.style.backgroundColor = makeRainbow();
+                } else
+                    pixels.style.backgroundColor = brushColor;
+            };
             pixels.onmousemove = () => {
-                pixels.style.backgroundColor = brushColor;
-            }
+
+                if (randomButton.classList.contains("active")) {
+                    pixels.style.backgroundColor = makeRainbow();
+                } else
+                    pixels.style.backgroundColor = brushColor;
+            };
         });
 
         //stops drawing on mouseup (if mouseup is within background)
         background.addEventListener("mouseup", () => {
             pixels.onmousemove = () => {
                 pixels.style.backgroundColor = "null";
-            }
-        })
+            };
+        });
     };
 };
 
@@ -172,6 +174,7 @@ function newGrid() {
 
     //changes grid size in css
     createPixels();
+
     for (let i = 0; i < allPixels.length; i++) {
         allPixels[i].style.height = gridPercent;
         allPixels[i].style.width = gridPercent;
@@ -189,26 +192,9 @@ colorPicker.onchange = () => {
 };
 
 eraseButton.onclick = () => {
-    // eraseButton.classList.toggle("active");
-    // if (eraseButton.classList.contains("active")) {
-    //     brushColor = "#FFFFFF";
-    // } else if (eraseButton.classList.contains("active") && rainbowButton.classList.contains("active")) {
-    //     brushColor = "#FFFFFF";
-    // } else if (eraseButton.classList.contains("active") && !rainbowButton.classList.contains("active")) {
-    //     brushColor = "#FFFFFF";
-    // } else if (!eraseButton.classList.contains("active") && rainbowButton.classList.contains("active")) {
-    //     brushColor = "transparent";
-    // }
-    // else brushColor = colorPicker.value; //change to current color
-    // console.log(backgroundColor);
-    // console.log(brushColor);
-    // console.log(colorPicker.value);
-
-
     eraseButton.classList.add("active");
     if (eraseButton.classList.contains("active")) {
         shadingButton.classList.remove("active");
-        rainbowButton.classList.remove("active");
         randomButton.classList.remove("active");
         brushColor = backgroundColor;
     }
@@ -221,7 +207,6 @@ resetCanvas.onclick = () => {
 
 drawButton.onclick = () => {
     shadingButton.classList.remove("active");
-    rainbowButton.classList.remove("active");
     randomButton.classList.remove("active");
     eraseButton.classList.remove("active");
 
@@ -231,39 +216,23 @@ drawButton.onclick = () => {
 shadingButton.onclick = () => { //unfinished
     shadingButton.classList.add("active");
     if (shadingButton.classList.contains("active")) {
-        rainbowButton.classList.remove("active");
         randomButton.classList.remove("active");
         eraseButton.classList.remove("active");
         //change color only by 10% opacity
     };
 };
 
-// rainbowButton.onclick = () => {
-//     rainbowButton.classList.toggle("active");
-//     console.log(brushColor);
-//     if (rainbowButton.classList.contains("active")) {
-//         canvas.classList.add("canvas_rainbow");
-//         brushColor = "transparent";
+function makeRainbow() {
+    let rainbowColors = ["#B924FF", "#6DA0FF", "#6ECED2", "#87E598", "#F2E27C", "#FFBB55", "#FE8327", "#FF5839", "#FF0084"];
 
-//     } else if (!rainbowButton.classList.contains("active")) {
-//         brushColor = colorPicker.value;
-//     }
-// };
-
-function randomColor() {
-    let randomNum = Math.floor(Math.random() * 16777215).toString(16);
-    let randomColor = "#" + randomNum;
-    rainbowButton.classList.add("active");
-    return randomColor;
+    let rainbow = rainbowColors[Math.floor(Math.random() * rainbowColors.length)];
+    return rainbow;
 };
 
-randomButton.onclick = () => { //unfinished
-    rainbowButton.classList.add("active");
-    if (rainbowButton.classList.contains("active")) {
+randomButton.onclick = () => {
+    randomButton.classList.add("active");
+    if (randomButton.classList.contains("active")) {
         shadingButton.classList.remove("active");
-        randomButton.classList.remove("active");
         eraseButton.classList.remove("active");
-
-        // brushColor = randomColor();
     };
 };
