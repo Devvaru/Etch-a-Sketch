@@ -196,10 +196,6 @@ p {
    user-select: none;
 }
 
-.canvas_rainbow {
-  background: conic-gradient(from -80.05deg at -1.51% -1.35%, rgba(255, 156, 41, 0.5) -94.98deg, rgba(255, 36, 36, 0.5) 159.67deg, rgba(185, 36, 255, 0.5) 181.23deg, rgba(94, 187, 255, 0.5) 207.54deg, rgba(132, 229, 153, 0.5) 220.45deg, rgba(255, 226, 121, 0.5) 240.66deg, rgba(255, 156, 41, 0.5) 265.02deg, rgba(255, 36, 36, 0.5) 519.67deg), conic-gradient(from 102.7deg at 101.12% 100.9%, #FF2424 -100.29deg, #FF9C29 158.19deg, #FFE279 183.3deg, #84E599 203.64deg, #5EBBFF 219.6deg, #B924FF 239.94deg, #FF2424 259.71deg, #FF9C29 518.19deg), #D9D9D9;
-}
-
 .pixels {
   background-color: #FFF;
   width: 6.25%;
