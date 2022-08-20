@@ -27,6 +27,11 @@ drawButton.textContent = "Draw";
 drawButton.className = "button";
 drawButton.id = "drawButton";
 
+const eraseButton = document.createElement("button");
+eraseButton.textContent = "Erase";
+eraseButton.className = "button";
+eraseButton.id = "eraseButton";
+
 const shadingButton = document.createElement("button");
 shadingButton.textContent = "Shading";
 shadingButton.className = "button";
@@ -40,6 +45,7 @@ randomButton.id = "random";
 //Append buttonsLeft
 main.appendChild(buttonsLeft);
 buttonsLeft.appendChild(drawButton);
+buttonsLeft.appendChild(eraseButton);
 buttonsLeft.appendChild(shadingButton);
 buttonsLeft.appendChild(randomButton);
 
@@ -72,10 +78,10 @@ const colorBox = document.createElement("button");
 colorBox.className = "colorBox";
 colorBox.id = "colorBox";
 
-const eraseButton = document.createElement("button");
-eraseButton.textContent = "Erase";
-eraseButton.className = "button";
-eraseButton.id = "eraseButton";
+const gridToggle = document.createElement("button");
+gridToggle.textContent = "Toggle Grid";
+gridToggle.className = "button";
+gridToggle.id = "gridToggle"
 
 const resetCanvas = document.createElement("button");
 resetCanvas.textContent = "Reset";
@@ -172,7 +178,7 @@ buttonsRight.appendChild(sliderContainer);
 sliderContainer.appendChild(slider);
 buttonsRight.appendChild(colorContainer);
 colorContainer.appendChild(colorPicker);
-buttonsRight.appendChild(eraseButton);
+buttonsRight.appendChild(gridToggle);
 buttonsRight.appendChild(resetCanvas);
 
 //Display numbers below slider
@@ -224,13 +230,12 @@ colorPicker.onchange = () => {
     brushColor = colorPicker.value;
 };
 
-eraseButton.onclick = () => {
-    eraseButton.classList.add("active");
-    shadingButton.classList.remove("active");
-    randomButton.classList.remove("active");
+gridToggle.onclick = () => {
+    for (let i = 0; i < allPixels.length; i++) {
+        allPixels[i].classList.toggle("showGrid");
+    };
 
-    brushColor = backgroundColor;
-};
+}
 
 resetCanvas.onclick = () => {
     clearCanvas();
@@ -243,6 +248,14 @@ drawButton.onclick = () => {
     eraseButton.classList.remove("active");
 
     brushColor = colorPicker.value
+};
+
+eraseButton.onclick = () => {
+    eraseButton.classList.add("active");
+    shadingButton.classList.remove("active");
+    randomButton.classList.remove("active");
+
+    brushColor = backgroundColor;
 };
 
 shadingButton.onclick = () => {

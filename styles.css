@@ -170,6 +170,13 @@ p {
   background: linear-gradient(90deg, #FF2424 0%, #FF9C29 19.19%, #FFE279 38.15%, #84E599 59.51%, #5EBBFF 82.27%, #B924FF 100%);
 }
 
+.showGrid {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #000000;
+  box-sizing: border-box;
+}
+
 .canvas {
   display: flex;
   gap: 0px;
