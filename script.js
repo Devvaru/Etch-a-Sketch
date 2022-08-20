@@ -88,7 +88,6 @@ resetCanvas.textContent = "Reset";
 resetCanvas.className = "button";
 resetCanvas.id = "resetButton";
 
-
 //Drawing area///////////////////////////////
 const canvas = document.createElement("div");
 canvas.id = "canvas";
@@ -98,8 +97,6 @@ main.appendChild(canvas);
 let backgroundColor = "white";
 let defaultColor = "black";
 let brushColor = defaultColor;
-let colorArr = [0, 0, 0, 0.1];
-let grayscale = "rgba(" + colorArr.toString() + ")"
 let squared = 256;
 
 function createPixels() { //creates pixels in canvas
@@ -110,29 +107,6 @@ function createPixels() { //creates pixels in canvas
         pixels.className = "pixels";
         canvas.appendChild(pixels);
 
-        function changeOpacity() {
-            pixels.style.backgroundColor = "rgba(0, 0, 0, 0)";
-            if (colorArr[3] < 1) {
-                colorArr[3] = colorArr[3] + (1 / 10);
-                grayscale = "rgba(" + colorArr.toString() + ")";
-            };
-        
-            switch(pixels.style.backgroundColor) {
-                case "rgba(0, 0, 0, 0)":
-                    "rgba(0, 0, 0, 0.1)";
-                    break;
-                case "rgba(0, 0, 0, 0.1)":
-                    "rgba(0, 0, 0, 0.2)";
-                    break;
-                case "rgba(0, 0, 0, 0.2)":
-                    "rgba(0, 0, 0, 0.3)";
-                    break;
-                // default: "rgba(0, 0, 0, 0)";
-            };
-            console.log(pixels.style.backgroundColor);
-            return pixels.style.backgroundColor;
-        };
-
         //starts drawing while mousedown
         canvas.addEventListener("mousedown", () => {
 
@@ -141,7 +115,7 @@ function createPixels() { //creates pixels in canvas
                 if (randomButton.classList.contains("active")) {
                     pixels.style.backgroundColor = makeRainbow();
                 } else if (shadingButton.classList.contains("active")) {
-                   changeOpacity();
+                    pixels.style.backgroundColor = changeOpacity(pixels.style.backgroundColor);
                 } else
                     pixels.style.backgroundColor = brushColor;
             };
@@ -150,7 +124,7 @@ function createPixels() { //creates pixels in canvas
                 if (randomButton.classList.contains("active")) {
                     pixels.style.backgroundColor = makeRainbow();
                 } else if (shadingButton.classList.contains("active")) {
-                    changeOpacity();
+                    pixels.style.backgroundColor = changeOpacity(pixels.style.backgroundColor);
                 } else
                     pixels.style.backgroundColor = brushColor;
             };
@@ -162,6 +136,28 @@ function createPixels() { //creates pixels in canvas
                 pixels.style.backgroundColor = "null";
             };
         });
+
+        //Shading function
+        let bgColor = "rgba(0, 0, 0, 0.1)";
+        let grayscale = Number(bgColor.slice(14,17));
+        
+
+        function changeOpacity() {
+
+            console.log(grayscale);
+            
+            if (grayscale < 0.9) {
+            
+                pixels.style.backgroundColor = (`rgba(0, 0, 0, ${grayscale + 0.1})`);
+
+                // pixels.style.backgroundColor[14] = parseInt(pixels.style.backgroundColor[14]) + 0.1;
+
+                // console.log("bg[14]=" + pixels.style.backgroundColor[14]);
+                // console.log("new bg=" + pixels.style.backgroundColor);
+
+            } 
+            return pixels.style.backgroundColor;
+        };
     };
 };
 
@@ -235,7 +231,7 @@ gridToggle.onclick = () => {
         allPixels[i].classList.toggle("showGrid");
     };
 
-}
+};
 
 resetCanvas.onclick = () => {
     clearCanvas();

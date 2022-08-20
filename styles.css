@@ -13,7 +13,7 @@ body {
 }
 
 #background {
-  background: #F8F0FF;
+  /* background: #F8F0FF; */
   background: #41445A;
   /* box-shadow: 30px 30px 80px -7px rgba(28, 72, 227, 0.5); */
   box-shadow: 30px 30px 80px -7px #161B23;
@@ -204,7 +204,7 @@ p {
 }
 
 .pixels {
-  background-color: #FFF;
+  background-color: rgba(0, 0, 0, 0.0);
   width: 6.25%;
   height: 6.25%;
   margin: 0px;
