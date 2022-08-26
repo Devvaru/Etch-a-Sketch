@@ -115,7 +115,7 @@ function createPixels() { //creates pixels in canvas
                 if (randomButton.classList.contains("active")) {
                     pixels.style.backgroundColor = makeRainbow();
                 } else if (shadingButton.classList.contains("active")) {
-                    pixels.style.backgroundColor = changeOpacity(pixels.style.backgroundColor);
+                    changeOpacity();
                 } else
                     pixels.style.backgroundColor = brushColor;
             };
@@ -124,7 +124,7 @@ function createPixels() { //creates pixels in canvas
                 if (randomButton.classList.contains("active")) {
                     pixels.style.backgroundColor = makeRainbow();
                 } else if (shadingButton.classList.contains("active")) {
-                    pixels.style.backgroundColor = changeOpacity(pixels.style.backgroundColor);
+                    changeOpacity();
                 } else
                     pixels.style.backgroundColor = brushColor;
             };
@@ -138,25 +138,21 @@ function createPixels() { //creates pixels in canvas
         });
 
         //Shading function
-        let bgColor = "rgba(0, 0, 0, 0.1)";
-        let grayscale = Number(bgColor.slice(14,17));
-        
-
         function changeOpacity() {
 
+            let grayscale = (Number(pixels.style.backgroundColor.slice(-4, -1)));
             console.log(grayscale);
-            
-            if (grayscale < 0.9) {
-            
+
+            if (!pixels.style.backgroundColor.includes("rgba")) {
+
+                pixels.style.backgroundColor = "rgba(0, 0, 0, 0.1)";
+                return pixels.style.backgroundColor;
+            }
+            else if (pixels.style.backgroundColor.slice(-4, -1) < 0.9) {
+
                 pixels.style.backgroundColor = (`rgba(0, 0, 0, ${grayscale + 0.1})`);
-
-                // pixels.style.backgroundColor[14] = parseInt(pixels.style.backgroundColor[14]) + 0.1;
-
-                // console.log("bg[14]=" + pixels.style.backgroundColor[14]);
-                // console.log("new bg=" + pixels.style.backgroundColor);
-
-            } 
-            return pixels.style.backgroundColor;
+                return pixels.style.backgroundColor;
+            };
         };
     };
 };
