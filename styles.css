@@ -83,7 +83,7 @@ p {
   font-weight: 600;
   font-family: "montserrat", sans-serif;
   /* background: linear-gradient(157.82deg, #FFBE8A 14.48%, #FFDF8E 85.52%); */
-  background: linear-gradient(97.18deg, #C26814 0%, #F88F2D 100%);
+  background: linear-gradient(97.37deg, #F78E2C 2.38%, #FF9900 100%);
   border-radius: 16px;
   padding: 20px;
   text-align: center;
@@ -96,12 +96,15 @@ p {
 
 .button:hover {
   /* box-shadow: -3px -3px 3px #FFFFFF, -10px -10px 20px #FFFFFF, 1px 1px 5px #D9AEFF, 10px 10px 20px #E2C1FF; */
-  box-shadow: -3px -3px 5px #5C5F76, -10px -10px 20px #5C5F76, 1px 1px 10px #303348, 10px 10px 20px #303348;
+  box-shadow: -3px -3px 5px #61657D, -10px -10px 20px #61657D, 1px 1px 10px #2C2E3C, 10px 10px 20px #2C2E3C;
+  transform: scale(1.03);
+
 }
 
 .active {
   /* box-shadow: -3px -3px 3px #FFFFFF, -10px -10px 20px #FFFFFF, 1px 1px 5px #D9AEFF, 10px 10px 20px #E2C1FF; */
-  box-shadow: -3px -3px 5px #5C5F76, -10px -10px 20px #5C5F76, 1px 1px 10px #303348, 10px 10px 20px #303348;
+  box-shadow: -3px -3px 5px #61657D, -10px -10px 20px #61657D, 1px 1px 10px #2C2E3C, 10px 10px 20px #2C2E3C;
+  transform: scale(1.03);
 }
 
 .slider {

@@ -225,7 +225,6 @@ gridToggle.onclick = () => {
     for (let i = 0; i < allPixels.length; i++) {
         allPixels[i].classList.toggle("showGrid");
     };
-
 };
 
 resetCanvas.onclick = () => {
