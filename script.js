@@ -88,7 +88,7 @@ resetCanvas.textContent = "Reset";
 resetCanvas.className = "button";
 resetCanvas.id = "resetButton";
 
-//Drawing area///////////////////////////////
+//Drawing area
 const canvas = document.createElement("div");
 canvas.id = "canvas";
 canvas.className = "canvas";
@@ -141,7 +141,6 @@ function createPixels() { //creates pixels in canvas
         function changeOpacity() {
 
             let grayscale = (Number(pixels.style.backgroundColor.slice(-4, -1)));
-            console.log(grayscale);
 
             if (!pixels.style.backgroundColor.includes("rgba")) {
 
@@ -162,7 +161,7 @@ createPixels()
 //Resets canvas by removing pixels as children
 function clearCanvas() {
     canvas.replaceChildren();
-}
+};
 
 //Append buttonsRight, declared before canvas but appended after
 main.appendChild(buttonsRight);
@@ -177,7 +176,7 @@ buttonsRight.appendChild(resetCanvas);
 const defaultValue = document.getElementById("slider").value;
 const sliderText = document.createElement("p");
 sliderText.id = "sliderText";
-sliderText.className = "sliderText"
+sliderText.className = "sliderText";
 sliderText.textContent = "Canvas size: " + defaultValue + " x " + defaultValue;
 sliderContainer.appendChild(sliderText);
 
@@ -191,7 +190,7 @@ function newGrid() {
     clearCanvas();
 
     //used to create pixels
-    squared = (newValue * newValue)
+    squared = (newValue * newValue);
     console.log("newValue is = " + newValue);
     console.log("squared = " + squared);
 
@@ -209,7 +208,7 @@ function newGrid() {
 };
 
 
-//Button event listeners__________________________________________
+//Button event listeners
 slider.addEventListener("change", () => {
     newGrid()
 });
@@ -239,7 +238,7 @@ drawButton.onclick = () => {
     randomButton.classList.remove("active");
     eraseButton.classList.remove("active");
 
-    brushColor = colorPicker.value
+    brushColor = colorPicker.value;
 };
 
 eraseButton.onclick = () => {
