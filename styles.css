@@ -1,4 +1,4 @@
-/* Commented out elements are for future light mode */
+/* Commented out elements are for potential future light mode */
 
 body {
   font-family: "montserrat", sans-serif;
@@ -159,18 +159,6 @@ p {
 
 .colorPicker::-webkit-color-swatch {
   border: none;
-}
-
-.colorBox {
-  width: 100%;
-  height: 30px;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
-  border-top-left-radius: 0px;
-  border-bottom-left-radius: 0px;
-  border-style: none;
-  padding: 0px;
-  background: linear-gradient(90deg, #FF2424 0%, #FF9C29 19.19%, #FFE279 38.15%, #84E599 59.51%, #5EBBFF 82.27%, #B924FF 100%);
 }
 
 .showGrid {
