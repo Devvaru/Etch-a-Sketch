@@ -32,10 +32,10 @@ eraseButton.textContent = "Erase";
 eraseButton.className = "button";
 eraseButton.id = "eraseButton";
 
-const shadingButton = document.createElement("button");
-shadingButton.textContent = "Shading";
-shadingButton.className = "button";
-shadingButton.id = "shadingButton";
+const grayscaleButton = document.createElement("button");
+grayscaleButton.textContent = "Grayscale";
+grayscaleButton.className = "button";
+grayscaleButton.id = "grayscaleButton";
 
 const randomButton = document.createElement("button");
 randomButton.textContent = "Random";
@@ -46,7 +46,7 @@ randomButton.id = "random";
 main.appendChild(buttonsLeft);
 buttonsLeft.appendChild(drawButton);
 buttonsLeft.appendChild(eraseButton);
-buttonsLeft.appendChild(shadingButton);
+buttonsLeft.appendChild(grayscaleButton);
 buttonsLeft.appendChild(randomButton);
 
 //Buttons on the right (column)
@@ -114,7 +114,7 @@ function createPixels() { //creates pixels in canvas
 
                 if (randomButton.classList.contains("active")) {
                     pixels.style.backgroundColor = makeRainbow();
-                } else if (shadingButton.classList.contains("active")) {
+                } else if (grayscaleButton.classList.contains("active")) {
                     changeOpacity();
                 } else
                     pixels.style.backgroundColor = brushColor;
@@ -123,7 +123,7 @@ function createPixels() { //creates pixels in canvas
 
                 if (randomButton.classList.contains("active")) {
                     pixels.style.backgroundColor = makeRainbow();
-                } else if (shadingButton.classList.contains("active")) {
+                } else if (grayscaleButton.classList.contains("active")) {
                     changeOpacity();
                 } else
                     pixels.style.backgroundColor = brushColor;
@@ -137,7 +137,7 @@ function createPixels() { //creates pixels in canvas
             };
         });
 
-        //Shading function
+        //Grayscale function
         function changeOpacity() {
 
             let grayscale = (Number(pixels.style.backgroundColor.slice(-4, -1)));
@@ -215,7 +215,7 @@ slider.addEventListener("change", () => {
 });
 
 colorPicker.onchange = () => {
-    shadingButton.classList.remove("active");
+    grayscaleButton.classList.remove("active");
     randomButton.classList.remove("active");
     eraseButton.classList.remove("active");
 
@@ -235,7 +235,7 @@ resetCanvas.onclick = () => {
 };
 
 drawButton.onclick = () => {
-    shadingButton.classList.remove("active");
+    grayscaleButton.classList.remove("active");
     randomButton.classList.remove("active");
     eraseButton.classList.remove("active");
 
@@ -244,14 +244,14 @@ drawButton.onclick = () => {
 
 eraseButton.onclick = () => {
     eraseButton.classList.add("active");
-    shadingButton.classList.remove("active");
+    grayscaleButton.classList.remove("active");
     randomButton.classList.remove("active");
 
     brushColor = backgroundColor;
 };
 
-shadingButton.onclick = () => {
-    shadingButton.classList.add("active");
+grayscaleButton.onclick = () => {
+    grayscaleButton.classList.add("active");
     randomButton.classList.remove("active");
     eraseButton.classList.remove("active");
 };
@@ -265,6 +265,6 @@ function makeRainbow() {
 
 randomButton.onclick = () => {
     randomButton.classList.add("active");
-    shadingButton.classList.remove("active");
+    grayscaleButton.classList.remove("active");
     eraseButton.classList.remove("active");
 };
